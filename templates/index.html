@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BHEL Portal</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>BHEL Portal</h1>
+
+        <p class="subtitle">
+            Instrumentation Engineering Automation Tool
+        </p>
+
+        <form action="/process" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label>Main Steam File</label>
+                <input type="file" name="main_steam" required>
+            </div>
+
+            <div class="form-group">
+                <label>MNC File</label>
+                <input type="file" name="mnc" required>
+            </div>
+
+            <div class="form-group">
+                <label>MNC1 File</label>
+                <input type="file" name="mnc1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Select Scope</label>
+
+                <select name="scope" required>
+                    <option value="">-- Select Scope --</option>
+                    <option value="P">P</option>
+                    <option value="E">E</option>
+                    <option value="V">V</option>
+                </select>
+            </div>
+
+            <button type="submit">
+                Process Files
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
